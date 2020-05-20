@@ -120,47 +120,47 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 	
-    Write-Output "Install-UserProfile"
+    Write-Output "## Install-UserProfile"
 	Install-UserProfile
-	Write-Output "Install-StartLayout ./configs/start-layout.xml"
+	Write-Output "## Install-StartLayout ./configs/start-layout.xml"
     Install-StartLayout "./configs/start-layout.xml"
-	Write-Output "Install-WindowsDeveloperMode"
+	Write-Output "## Install-WindowsDeveloperMode"
     Install-WindowsDeveloperMode
-    Write-Output "Set-HidePeopleOnTaskbar $true"
+    Write-Output "## Set-HidePeopleOnTaskbar $true"
     Set-HidePeopleOnTaskbar $true
-    Write-Output "Set-ShowPeopleOnTaskbar $false"
+    Write-Output "## Set-ShowPeopleOnTaskbar $false"
     Set-ShowPeopleOnTaskbar $false
-    Write-Output "Set-SmallButtonsOnTaskbar $true"
+    Write-Output "## Set-SmallButtonsOnTaskbar $true"
     Set-SmallButtonsOnTaskbar $true
-    Write-Output "Set-MultiMonitorTaskbarMode "2""
+    Write-Output "## Set-MultiMonitorTaskbarMode "2""
     Set-MultiMonitorTaskbarMode "2"
-    Write-Output "Set-DisableWindowsDefender $true"
+    Write-Output "## Set-DisableWindowsDefender $true"
     Set-DisableWindowsDefender $true
-    Write-Output "Set-DarkTheme $true"
+    Write-Output "## Set-DarkTheme $true"
     Set-DarkTheme $true
-    Write-Output "Set-DisableLockScreen $true"
+    Write-Output "## Set-DisableLockScreen $true"
     Set-DisableLockScreen $true
-    Write-Output "Set-DisableAeroShake $true"
+    Write-Output "## Set-DisableAeroShake $true"
     Set-DisableAeroShake $true
-    Write-Output "Set-EnableLongPathsForWin32 $true"
+    Write-Output "## Set-EnableLongPathsForWin32 $true"
     Set-EnableLongPathsForWin32 $true
-    Write-Output "Set-OtherWindowsStuff"
+    Write-Output "## Set-OtherWindowsStuff"
     Set-OtherWindowsStuff
-    Write-Output "Remove-3dObjectsFolder"
+    Write-Output "## Remove-3dObjectsFolder"
     Remove-3dObjectsFolder
-    Write-Output "Disable-AdministratorSecurityPrompt"
+    Write-Output "## Disable-AdministratorSecurityPrompt"
     Disable-AdministratorSecurityPrompt
-    Write-Output "Disable-UselessServices"
+    Write-Output "## Disable-UselessServices"
     Disable-UselessServices
-    Write-Output "Disable-EasyAccessKeyboard"
+    Write-Output "## Disable-EasyAccessKeyboard"
     Disable-EasyAccessKeyboard
-    Write-Output "Set-FolderViewOptions"
+    Write-Output "## Set-FolderViewOptions"
     Set-FolderViewOptions
-    Write-Output "Disable-AeroShaking"
+    Write-Output "## Disable-AeroShaking"
     Disable-AeroShaking
-    Write-Output "Uninstall-StoreApps"
+    Write-Output "## Uninstall-StoreApps"
     Uninstall-StoreApps
-	Write-Output "Deactivate XPS and FAX-Services"
+	Write-Output "## Deactivate XPS and FAX-Services"
     @(
         "Printing-XPSServices-Features"
         "Printing-XPSServices-Features"
@@ -192,15 +192,32 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "****"
-
-    $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
-    Install-ChocoPackages $chocopkgs 1 --ignore-checksums
-    Install-ChocoPackages $chocopkgs 2
-    Install-ChocoPackages $chocopkgs 3
-	Install-ChocoPackages $chocopkgs 4
+	
+	# Installationen mit Checksum-Fehler
+	cinst teamviewer --ignore-checksums
+	
 	
 
- 
+    $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
+    Install-ChocoPackages $chocopkgs 1
+	
+	$confirmation = Read-Host "Extra-Software"
+	if ($confirmation -eq 'y') {
+    Install-ChocoPackages $chocopkgs 2
+	cinst googlechrome --ignore-checksums
+	}
+	
+	$confirmation = Read-Host "Spiele-Software"
+	if ($confirmation -eq 'y') {
+    Install-ChocoPackages $chocopkgs 3
+	cinst twitch --ignore-checksums
+	}
+	
+	$confirmation = Read-Host "Development-Software"
+	if ($confirmation -eq 'y') {
+    Install-ChocoPackages $chocopkgs 4
+	}
+
 
     Remove-TempDirectory
 

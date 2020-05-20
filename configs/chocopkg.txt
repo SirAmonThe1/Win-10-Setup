@@ -6,22 +6,18 @@
 
 ########   Wichtig
 
-2 7zip.install
-1 teamviewer
-2 kis
+1 7zip.install
+1 kis
 
 ########   Browsers
-
-1 googlechrome 
-2 firefox
+ 
+1 firefox
 3 opera-gx
 
 
 ########   Plugins and Runtime
 
-2 javaruntime
-
-
+1 javaruntime
 
 ########   Messaging
 
@@ -32,17 +28,15 @@
 ########   Tools
 
 2 synologydrive
-2 adobereader
-2 vlc
-2 ccleaner
+1 adobereader
+1 vlc
 2 dropbox
-2 keepass
-2 keepass-plugin-qrcodegen
+1 keepass
+1 keepass-plugin-qrcodegen
 
 ########   tools
 
 3 steam
-3 twitch
 
 ########   Graphic Tools
 
