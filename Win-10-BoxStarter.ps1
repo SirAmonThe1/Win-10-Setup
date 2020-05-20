@@ -72,7 +72,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 
 # Enter inside the repository and invoke the real set-up process
 Push-Location $setupPath
-Import-Module '.\setup.psm1' -Force
+#Import-Module '.\setup.psm1' -Force
 
 Get-ChildItem .\modules\*.psm1 | Import-Module -Force
 
@@ -150,6 +150,8 @@ if ($debug -ne $true) {
     Remove-3dObjectsFolder
     Write-Output "## Disable-AdministratorSecurityPrompt"
     Disable-AdministratorSecurityPrompt
+	Write-Output "## Disable-BingSearchInStartMenu"
+	Disable-BingSearchInStartMenu
     Write-Output "## Disable-UselessServices"
     Disable-UselessServices
     Write-Output "## Disable-EasyAccessKeyboard"
@@ -201,19 +203,19 @@ if ($debug -ne $true) {
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
 	
-	$confirmation = Read-Host "Extra-Software"
+	$confirmation = Read-Host "Extra-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 2
 	cinst googlechrome --ignore-checksums
 	}
 	
-	$confirmation = Read-Host "Spiele-Software"
+	$confirmation = Read-Host "Spiele-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 3
 	cinst twitch --ignore-checksums
 	}
 	
-	$confirmation = Read-Host "Development-Software"
+	$confirmation = Read-Host "Development-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 4
 	}
