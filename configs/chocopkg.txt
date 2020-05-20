@@ -1,34 +1,26 @@
-#####################
-# SOFTWARE
-#####################
+#######################
+# Alle Pakete mit Checksum-Fehler müssen direkt
+# in der Win-10-BoxStarter.ps1 eingetragen werden
+#######################
+
 
 ########   Wichtig
 
-1 7zip.install
-1 teamviewer --ignore-checksums
-1 kis
+2 7zip.install
+1 teamviewer
+2 kis
 
 ########   Browsers
 
-2 GoogleChrome --ignore-checksums
+1 googlechrome 
 2 firefox
-2 opera-gx
+3 opera-gx
 
 
 ########   Plugins and Runtime
 
-1 javaruntime
+2 javaruntime
 
-
-########   tools
-
-3 steam
-3 twitch --ignore-checksums
-
-########   Dev Tools
-
-3 git.install
-3 github-desktop
 
 
 ########   Messaging
@@ -43,6 +35,14 @@
 2 adobereader
 2 vlc
 2 ccleaner
+2 dropbox
+2 keepass
+2 keepass-plugin-qrcodegen
+
+########   tools
+
+3 steam
+3 twitch
 
 ########   Graphic Tools
 
@@ -50,6 +50,12 @@
 
 ########   Audio Tools
 
-2 audacity
-2 screentogif
-3 spotify --ignore-checksums
+4 audacity
+4 screentogif
+2 spotify
+
+
+########   Dev Tools
+
+4 git.install
+4 github-desktop

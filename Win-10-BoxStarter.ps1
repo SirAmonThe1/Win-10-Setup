@@ -12,7 +12,7 @@ Push-Location "/"
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "#####################"
-	Write-Output "Adjust the execution policy for a programming environment"
+	Write-Output "# ----- Adjust the execution policy for a programming environment"
 	Write-Output "#####################"
 	Write-Output "****"
 	Write-Output "****"
@@ -30,7 +30,7 @@ Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "#####################"
-	Write-Output "Install chocolately, the minimum requirement"
+	Write-Output "# ----- Install chocolately, the minimum requirement"
 	Write-Output "#####################"
 	Write-Output "****"
 	Write-Output "****"
@@ -54,7 +54,7 @@ if (Test-Path -Path $setupPath) {
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "#####################"
-	Write-Output "Install git"
+	Write-Output "# ----- Install git"
 	Write-Output "#####################"
 	Write-Output "****"
 	Write-Output "****"
@@ -87,7 +87,7 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "****"
-	Write-Output "Beginning the Set-Up"
+	Write-Output "# ----- Beginning the Set-Up"
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "****"
@@ -112,7 +112,7 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "#####################"
-	Write-Output "Windows-Einstellungen"
+	Write-Output "# ----- Windows-Einstellungen"
 	Write-Output "#####################"
 	Write-Output "****"
 	Write-Output "****"
@@ -185,7 +185,7 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "#####################"
-	Write-Output "SOFTWARE"
+	Write-Output "# ----- SOFTWARE"
 	Write-Output "#####################"
 	Write-Output "****"
 	Write-Output "****"
@@ -193,58 +193,11 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 
-########   Wichtig
-
-cinst 7zip.install
-cinst teamviewer --ignore-checksums
-cinst kis
-
-########   Browsers
-
-cinst googlechrome --ignore-checksums
-cinst firefox
-cinst opera-gx
-
-
-########   Plugins and Runtime
-
-cinst javaruntime
-
-
-########   tools
-
-cinst steam
-cinst twitch --ignore-checksums
-
-########   Dev Tools
-
-cinst git.install
-cinst github-desktop
-
-
-########   Messaging
-
-cinst discord
-cinst whatsapp
-
-
-########   Tools
-
-cinst synologydrive
-cinst adobereader
-cinst vlc
-cinst ccleaner
-
-########   Graphic Tools
-
-cinst irfanview
-
-########   Audio Tools
-
-cinst audacity
-cinst screentogif
-cinst spotify --ignore-checksums
-	
+    $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
+    Install-ChocoPackages $chocopkgs 1 --ignore-checksums
+    Install-ChocoPackages $chocopkgs 2
+    Install-ChocoPackages $chocopkgs 3
+	Install-ChocoPackages $chocopkgs 4
 	
 
  
