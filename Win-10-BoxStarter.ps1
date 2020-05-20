@@ -5,9 +5,39 @@ $setupPath = "./Dio-setup"
 Push-Location "/"
 
 # Adjust the execution policy for a programming environment
+
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "Adjust the execution policy for a programming environment"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+
 Set-ExecutionPolicy Unrestricted -Scope LocalMachine -Force
 
 # Install chocolately, the minimum requirement
+
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "Install chocolately, the minimum requirement"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -17,6 +47,21 @@ if (Test-Path -Path $setupPath) {
 }
 
 # Install git
+
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "Install git"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+
 & choco install git --confirm --limit-output
 
 # Reset the path environment
@@ -34,45 +79,88 @@ Get-ChildItem .\modules\*.psm1 | Import-Module -Force
 if ($debug -ne $true) {
     
 	#####################
-	# PREREQUISITES
+	# Vorbereitung
 	#####################
 	
-	Write-Output "Beginning the set-up"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "Beginning the Set-Up"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	
 
     $global:setupPath = (Get-Location).Path
 
     # Make sure that Git Bash does use colors on Windows
     [System.Environment]::SetEnvironmentVariable("FORCE_COLOR", "true", "Machine")
 	
-	
-	
+
 	
 	#####################
 	# Windows-Einstellungen
 	#####################
 	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "Windows-Einstellungen"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	
     Write-Output "Install-UserProfile"
 	Install-UserProfile
+	Write-Output "Install-StartLayout ./configs/start-layout.xml"
     Install-StartLayout "./configs/start-layout.xml"
+	Write-Output "Install-WindowsDeveloperMode"
     Install-WindowsDeveloperMode
+    Write-Output "Set-HidePeopleOnTaskbar $true"
     Set-HidePeopleOnTaskbar $true
+    Write-Output "Set-ShowPeopleOnTaskbar $false"
     Set-ShowPeopleOnTaskbar $false
+    Write-Output "Set-SmallButtonsOnTaskbar $true"
     Set-SmallButtonsOnTaskbar $true
+    Write-Output "Set-MultiMonitorTaskbarMode "2""
     Set-MultiMonitorTaskbarMode "2"
+    Write-Output "Set-DisableWindowsDefender $true"
     Set-DisableWindowsDefender $true
+    Write-Output "Set-DarkTheme $true"
     Set-DarkTheme $true
+    Write-Output "Set-DisableLockScreen $true"
     Set-DisableLockScreen $true
+    Write-Output "Set-DisableAeroShake $true"
     Set-DisableAeroShake $true
+    Write-Output "Set-EnableLongPathsForWin32 $true"
     Set-EnableLongPathsForWin32 $true
+    Write-Output "Set-OtherWindowsStuff"
     Set-OtherWindowsStuff
+    Write-Output "Remove-3dObjectsFolder"
     Remove-3dObjectsFolder
+    Write-Output "Disable-AdministratorSecurityPrompt"
     Disable-AdministratorSecurityPrompt
+    Write-Output "Disable-UselessServices"
     Disable-UselessServices
+    Write-Output "Disable-EasyAccessKeyboard"
     Disable-EasyAccessKeyboard
+    Write-Output "Set-FolderViewOptions"
     Set-FolderViewOptions
+    Write-Output "Disable-AeroShaking"
     Disable-AeroShaking
+    Write-Output "Uninstall-StoreApps"
     Uninstall-StoreApps
-
+	Write-Output "Deactivate XPS and FAX-Services"
     @(
         "Printing-XPSServices-Features"
         "Printing-XPSServices-Features"
@@ -80,10 +168,6 @@ if ($debug -ne $true) {
     ) | ForEach-Object { Disable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
 
     @(
-        "TelnetClient"
-        "HypervisorPlatform"
-        "NetFx3"
-        "Microsoft-Hyper-V-All"
         "Containers-DisposableClientVM" # Windows Sandbox
     ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
 	
@@ -93,38 +177,76 @@ if ($debug -ne $true) {
 	
 #####################
 # SOFTWARE
-#####################    
+#####################
 
-$chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
-    Install-ChocoPackages $chocopkgs 1
-    Install-ChocoPackages $chocopkgs 2
-    Install-ChocoPackages $chocopkgs 3
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "SOFTWARE"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+
+########   Wichtig
+
+cinst 7zip.install
+cinst teamviewer --ignore-checksums
+cinst kis
+
+########   Browsers
+
+cinst googlechrome --ignore-checksums
+cinst firefox
+cinst opera-gx
 
 
-    Get-ChildItem .\modules\common.psm1 | Import-Module -Force
-    Get-ChildItem .\modules\*.psm1 | Import-Module -Force
-    $global:setupPath = (Get-Location).Path
+########   Plugins and Runtime
 
-    Invoke-TemporaryGitDownload "debloat" "https://github.com/W4RH4WK/Debloat-Windows-10" {
-        & "./scripts/block-telemetry.ps1"
-    }
+cinst javaruntime
 
 
-    # Install Dracula theme for all terminals
-    Invoke-TemporaryZipDownload "colortool" "https://github.com/microsoft/terminal/releases/download/1904.29002/ColorTool.zip" {
-        $termColorsPath = Join-Path $global:setupPath "configs/Dracula-ColorTool.itermcolors"
-        (& ./colortool "-d" "-b" "-x" $termColorsPath)
-        
-        Set-PSReadlineOption -Color @{
-            "Command" = [ConsoleColor]::Green
-            "Parameter" = [ConsoleColor]::Gray
-            "Operator" = [ConsoleColor]::Magenta
-            "Variable" = [ConsoleColor]::White
-            "String" = [ConsoleColor]::Yellow
-            "Number" = [ConsoleColor]::Blue
-            "Type" = [ConsoleColor]::Cyan
-            "Comment" = [ConsoleColor]::DarkCyan
-        }
+########   tools
+
+cinst steam
+cinst twitch --ignore-checksums
+
+########   Dev Tools
+
+cinst git.install
+cinst github-desktop
+
+
+########   Messaging
+
+cinst discord
+cinst whatsapp
+
+
+########   Tools
+
+cinst synologydrive
+cinst adobereader
+cinst vlc
+cinst ccleaner
+
+########   Graphic Tools
+
+cinst irfanview
+
+########   Audio Tools
+
+cinst audacity
+cinst screentogif
+cinst spotify --ignore-checksums
+	
+	
+
     }
 
     Remove-TempDirectory
