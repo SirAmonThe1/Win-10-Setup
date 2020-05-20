@@ -4,52 +4,44 @@
 #######################
 
 
-########   Wichtig
+########   Wird immer installiert
 
 1 7zip.install
 1 kis
-
-########   Browsers
- 
 1 firefox
-3 opera-gx
-
-
-########   Plugins and Runtime
-
 1 javaruntime
+1 adobereader
+1 vlc
 
-########   Messaging
+1 keepass
+1 keepass-plugin-qrcodegen
+1 keepass-plugin-trayrecent
+1 keepass-plugin-favicon
+1 keepass-plugin-enhancedentryview
+1 keepass-plugin-kpentrytemplates
 
-3 discord
+
+
+########   Eigene Wichtige Installs
+
+2 synologydrive
+2 dropbox
+2 irfanview
+2 spotify
+2 discord
+2 office365proplus
+
+
+########   Gaming Features
+ 
+3 steam
+3 opera-gx
 3 whatsapp
 
 
-########   Tools
-
-2 synologydrive
-1 adobereader
-1 vlc
-2 dropbox
-1 keepass
-1 keepass-plugin-qrcodegen
-
-########   tools
-
-3 steam
-
-########   Graphic Tools
-
-2 irfanview
-
-########   Audio Tools
+########   Development Tools
 
 4 audacity
 4 screentogif
-2 spotify
-
-
-########   Dev Tools
-
 4 git.install
 4 github-desktop

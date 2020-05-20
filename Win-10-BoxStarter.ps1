@@ -219,7 +219,8 @@ if ($debug -ne $true) {
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 4
 	}
-
+	
+	cinst chocolateygui
 
     Remove-TempDirectory
 
