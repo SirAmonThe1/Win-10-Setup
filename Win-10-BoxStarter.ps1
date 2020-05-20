@@ -1,7 +1,3 @@
-#####################
-# PREREQUISITES
-#####################
-
 # Settings
 $repoUri = 'https://github.com/SirAmonThe1/Win-10-Setup.git'
 $setupPath = "./Dio-setup"
@@ -34,14 +30,13 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 
 
 
+#####################
+# PREREQUISITES
+#####################
 
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileExtensions
+Set-BoxstarterTaskbarOptions -Size Small -Combine Always -AlwaysShowIconsOn -MultiMonitorOn -MultiMonitorMode All -MultiMonitorCombine Always
 
-Set-ExplorerOptions -showHiddenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
-Set-TaskbarSmall
-
-# Powershell
-cinst PowerShell
-cinst poshgit
 
 #####################
 # SOFTWARE
