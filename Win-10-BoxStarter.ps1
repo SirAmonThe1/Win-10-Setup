@@ -227,5 +227,23 @@ if ($debug -ne $true) {
     # Clean
     Pop-Location
     Pop-Location
+	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "# ----- Fertig"
+	Write-Output "# ----- Fertig"
+	Write-Output "# ----- Fertig"
+	Write-Output "# ----- Fertig"
+	Write-Output "# ----- Fertig"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
 }
 
