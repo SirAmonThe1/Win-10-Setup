@@ -26,75 +26,14 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 & git clone $repoUri $setupPath
 
 # Enter inside the repository and invoke the real set-up process
+Push-Location $setupPath
+Import-Module '.\setup.psm1' -Force
 
+if ($debug -ne $true) {
+    Start-Setup
 
+    # Clean
+    Pop-Location
+    Pop-Location
+}
 
-
-#####################
-# PREREQUISITES
-#####################
-
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileExtensions
-Set-BoxstarterTaskbarOptions -Size Small -Combine Always -AlwaysShowIconsOn -MultiMonitorOn -MultiMonitorMode All -MultiMonitorCombine Always
-
-
-#####################
-# SOFTWARE
-#####################
-
-# 7Zip
-cinst 7zip.install
-
-# Some browsers
-cinst GoogleChrome
-cinst chromium
-cinst brave
-cinst firefox
-cinst firefox-dev --pre 
-cinst Opera
-cinst microsoft-edge-insider
-cinst microsoft-edge-insider-dev
-
-
-#Plugins and Runtime
-cinst javaruntime
-
-# Geek tools
-cinst steam
-cinst twitch --ignore-checksums
-
-# Dev Tools
-cinst git.install
-cinst nvm
-cinst cascadiacode
-cinst vscode
-cinst vscode-insiders
-cinst gitkraken
-cinst github-desktop
-cinst postman
-cinst fiddler
-cinst microsoft-windows-terminal
-cinst teamviewer
-cinst azure-cli
-
-# Messaging
-cinst discord
-cinst slack
-cinst whatsapp
-cinst telegram
-cinst microsoft-teams
-cinst skype
-
-# Tools
-cinst foxitreader
-cinst vlc
-cinst ccleaner
-
-# Graphic Tools
-cinst paint.net
-
-# Audio Tools
-cinst audacity
-cinst lightworks
-cinst screentogif
-cinst spotify --ignore-checksums
