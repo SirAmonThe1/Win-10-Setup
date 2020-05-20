@@ -203,18 +203,33 @@ if ($debug -ne $true) {
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
 	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
 	$confirmation = Read-Host "Extra-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 2
 	cinst googlechrome --ignore-checksums
 	}
 	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
 	$confirmation = Read-Host "Spiele-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 3
 	cinst twitch --ignore-checksums
 	}
 	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"	
 	$confirmation = Read-Host "Development-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 4
