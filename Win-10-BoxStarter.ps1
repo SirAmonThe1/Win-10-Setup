@@ -221,7 +221,11 @@ if ($debug -ne $true) {
 	}
 	
 	cinst chocolateygui
-
+	
+	Write-Output "## Install-StartLayout ./configs/start-layout.xml"
+    Install-StartLayout "./configs/start-layout.xml"
+	
+	
     Remove-TempDirectory
 
     # Clean
