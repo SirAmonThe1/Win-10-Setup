@@ -1,67 +1,55 @@
-####################
-# Basic
-####################
-1 googlechrome
-1 anydesk
-1 winrar
-2 discord
+#####################
+# SOFTWARE
+#####################
 
-####################
-# Multimedia
-####################
+########   Wichtig
 
-####################
-# Entertainment
-####################
-2 leagueoflegends
+1 7zip.install
+1 teamviewer --ignore-checksums
+1 kis
+
+########   Browsers
+
+2 GoogleChrome --ignore-checksums
+2 firefox
+2 opera-gx
+
+
+########   Plugins and Runtime
+
+1 javaruntime
+
+
+########   tools
+
 3 steam
+3 twitch --ignore-checksums
 
-####################
-# Monitoring
-####################
-2 coretemp
-2 intel-xtu
+########   Dev Tools
 
-####################
-# Tools
-####################
-1 registrychangesview
-1 utorrent
-2 cheatengine
-2 tor-browser
-2 teamviewer9
+3 git.install
+3 github-desktop
 
-####################
-# Development
-####################
-1 curl
-1 cmake
-2 angryip
-2 docker-cli
-2 bitnami-xampp
 
-####################
-# IDE and editors
-####################
-1 notepadplusplus
-1 vscode
-1 visualstudio2017professional
+########   Messaging
 
-####################
-# Runtime
-####################
-1 vcredist-all
-2 dotnetcore-runtime
-2 javaruntime
+3 discord
+3 whatsapp
 
-####################
-# SDK
-####################
-1 mingw
-1 nodejs
-1 yarn
-2 python2
-2 python3
-2 openjdk
-1 jre8
-3 pip
+
+########   Tools
+
+2 synologydrive
+2 adobereader
+2 vlc
+2 ccleaner
+
+########   Graphic Tools
+
+2 irfanview
+
+########   Audio Tools
+
+2 audacity
+2 screentogif
+3 spotify --ignore-checksums

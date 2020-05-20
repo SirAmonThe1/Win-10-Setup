@@ -86,8 +86,16 @@ if ($debug -ne $true) {
         "Microsoft-Hyper-V-All"
         "Containers-DisposableClientVM" # Windows Sandbox
     ) | ForEach-Object { Enable-WindowsOptionalFeature -FeatureName $_ -Online -NoRestart }
+	
+	
+	
+	
+	
+#####################
+# SOFTWARE
+#####################    
 
-    $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
+$chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
     Install-ChocoPackages $chocopkgs 2
     Install-ChocoPackages $chocopkgs 3
