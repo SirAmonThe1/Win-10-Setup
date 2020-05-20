@@ -247,7 +247,7 @@ cinst spotify --ignore-checksums
 	
 	
 
-    }
+ 
 
     Remove-TempDirectory
 
