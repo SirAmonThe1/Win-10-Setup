@@ -3,7 +3,7 @@
 #####################
 
 # Settings
-$repoUri = 'https://github.com/PapaDio/setup.git'
+$repoUri = 'https://github.com/SirAmonThe1/Win-10-Setup.git'
 $setupPath = "./Dio-setup"
 
 Push-Location "/"
