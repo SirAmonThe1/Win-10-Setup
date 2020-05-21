@@ -17,11 +17,12 @@
 1 treesizefree
 1 crystaldiskmark
 1 sysinternals
+1 notepadplusplus
 
 1 keepass.install
 1 keepass-plugin-qrcodegen
 1 keepass-plugin-trayrecent
-1 keepass-plugin-favicon
+1 keepass-yet-another-favicon-downloader
 1 keepass-plugin-enhancedentryview
 1 keepass-kpentrytemplates
 
@@ -32,8 +33,8 @@
 2 synologydrive
 2 dropbox
 2 irfanview
-2 spotify
 2 discord
+2 8gadgetpack
 
 
 
@@ -44,6 +45,7 @@
 3 opera-gx
 3 whatsapp
 3 mousewithoutborders
+3 logitechgaming
 
 
 

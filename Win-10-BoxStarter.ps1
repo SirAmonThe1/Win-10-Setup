@@ -1,6 +1,6 @@
 # Settings
 $repoUri = 'https://github.com/SirAmonThe1/Win-10-Setup.git'
-$setupPath = "./Dio-setup"
+$setupPath = "./Win10_InitialStart"
 
 Push-Location "/"
 
@@ -212,6 +212,7 @@ if ($debug -ne $true) {
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 2
 	cinst googlechrome --ignore-checksums
+	cinst spotify --ignore-checksums
 	}
 	
 	Write-Output "****"
