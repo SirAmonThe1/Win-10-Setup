@@ -1,0 +1,6 @@
+Tool zum starten
+
+weitere Progs außerhalb von Chocolatey:
+- Sky Go
+- Star Money
+- Office

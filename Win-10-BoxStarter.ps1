@@ -236,6 +236,42 @@ if ($debug -ne $true) {
     Install-ChocoPackages $chocopkgs 4
 	}
 	
+
+
+
+#####################
+# Windows Update
+#####################
+
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "#####################"
+	Write-Output "# ----- Windows-Update"
+	Write-Output "#####################"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output ""
+	Write-Output ""
+	Write-Output ""
+	Write-Output "Get-WindowsUpdate"
+	Get-WindowsUpdate
+	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	$confirmation = Read-Host "Windows-Updates installieren? [y/n]"
+	if ($confirmation -eq 'y') {
+    	Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot
+	}
+	
 	cinst chocolateygui
 	
 	Write-Output "## Install-StartLayout ./configs/start-layout.xml"

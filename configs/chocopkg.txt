@@ -6,6 +6,7 @@
 
 ########   Wird immer installiert
 
+1 PSWindowsUpdate
 1 7zip.install
 1 kis
 1 firefox
