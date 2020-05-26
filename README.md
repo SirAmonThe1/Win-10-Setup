@@ -12,7 +12,7 @@ Of course this personal repository is configured to be adapter on my specific ne
 
 From a powershell console, as an Administrator, just launch the following command:
 
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/SirAmonThe1/Win-10-Setup/master/Win-10-BoxStarter.ps1'))`
+`iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/SirAmonThe1/Win-10-Setup/master/Win-10-BoxStarter.ps1'))`
 
 ## Customization
 

@@ -160,8 +160,6 @@ if ($debug -ne $true) {
     Set-FolderViewOptions
     Write-Output "## Disable-AeroShaking"
     Disable-AeroShaking
-    Write-Output "## Uninstall-StoreApps"
-    Uninstall-StoreApps
 	Write-Output "## Deactivate XPS and FAX-Services"
     @(
         "Printing-XPSServices-Features"
@@ -261,6 +259,7 @@ if ($debug -ne $true) {
 	Write-Output ""
 	Write-Output "Get-WindowsUpdate"
 	Get-WindowsUpdate
+	Add-WUServiceManager -ServiceID "7971f918-a847-4430-9279-4a52d1efe18d" -AddServiceFlag 7
 	
 	Write-Output "****"
 	Write-Output "****"
@@ -271,6 +270,10 @@ if ($debug -ne $true) {
 	if ($confirmation -eq 'y') {
     	Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot
 	}
+	
+	
+	Write-Output "## Uninstall-StoreApps"
+    Uninstall-StoreApps
 	
 	cinst chocolateygui
 	
