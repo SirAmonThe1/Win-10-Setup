@@ -18,7 +18,7 @@
 1 cpu-z
 1 treesizefree
 1 crystaldiskmark
-1 crystaldisk
+1 crystaldiskinfo
 1 shutup10
 1 notepadplusplus
 1 powertoys
