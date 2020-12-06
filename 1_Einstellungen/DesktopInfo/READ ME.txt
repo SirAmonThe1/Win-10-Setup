@@ -1,0 +1,9 @@
+1. Prog Installieren
+2. Win+R drücken
+3. taskschd.msc eingeben und Enter
+4. Aufgabe importieren
+5. .xml  auswählen
+6. Pfad prüfen in Aufgabe
+7. Verknüpfung nutzen für AutoStart (shell:startup)
+
+.ini in ProgVerzeichnis

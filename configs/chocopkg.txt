@@ -7,25 +7,26 @@
 ########   Wird immer installiert
 
 1 PSWindowsUpdate
-1 7zip.install
-1 kis
+1 7zip
+1 PowerShell
+## 1 kis
 1 firefox
 1 javaruntime
 1 adobereader
 1 vlc
 1 veracrypt
-1 cpu-z.install
+1 cpu-z
 1 treesizefree
 1 crystaldiskmark
-1 sysinternals
+1 crystaldisk
+1 shutup10
 1 notepadplusplus
-
-1 keepass.install
-1 keepass-plugin-qrcodegen
-1 keepass-plugin-trayrecent
-1 keepass-yet-another-favicon-downloader
-1 keepass-plugin-enhancedentryview
-1 keepass-kpentrytemplates
+1 powertoys
+1 keepass
+1 adwcleaner
+1 driverbooster
+1 onedrive
+1 googlechrome
 
 
 
@@ -35,7 +36,10 @@
 2 dropbox
 2 irfanview
 2 discord
-2 8gadgetpack
+2 pdf24
+2 desktopinfo
+2 sonos-s1-controller
+2 vyprvpn
 
 
 
@@ -54,7 +58,19 @@
 
 4 audacity
 4 screentogif
-4 git.install
+4 git
 4 github-desktop
 4 lazarus
 4 filebot
+
+
+
+########   Office
+
+5 office365proplus
+
+
+
+########   AMD Rechner
+
+6 amd-ryzen-chipset

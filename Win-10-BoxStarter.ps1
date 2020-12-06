@@ -209,7 +209,6 @@ if ($debug -ne $true) {
 	$confirmation = Read-Host "Extra-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 2
-	cinst googlechrome --ignore-checksums
 	cinst spotify --ignore-checksums
 	}
 	
@@ -234,6 +233,25 @@ if ($debug -ne $true) {
     Install-ChocoPackages $chocopkgs 4
 	}
 	
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"	
+	$confirmation = Read-Host "Office 365 ProPlus installieren? [y/n]"
+	if ($confirmation -eq 'y') {
+    Install-ChocoPackages $chocopkgs 5
+	}
+
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"	
+	$confirmation = Read-Host "AMD-Chipsatztreiber installieren? [y/n]"
+	if ($confirmation -eq 'y') {
+    Install-ChocoPackages $chocopkgs 6
+	}
 
 
 
