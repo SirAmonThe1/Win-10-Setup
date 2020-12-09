@@ -194,7 +194,7 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	
 	# Installationen mit Checksum-Fehler
-	cinst teamviewer --ignore-checksums
+	cinst teamviewer --ignore-checksums -y
 	
 	
 
@@ -209,7 +209,7 @@ if ($debug -ne $true) {
 	$confirmation = Read-Host "Extra-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 2
-	cinst spotify --ignore-checksums
+	cinst spotify --ignore-checksums -y
 	}
 	
 	Write-Output "****"
@@ -220,7 +220,7 @@ if ($debug -ne $true) {
 	$confirmation = Read-Host "Spiele-Software installieren? [y/n]"
 	if ($confirmation -eq 'y') {
     Install-ChocoPackages $chocopkgs 3
-	cinst twitch --ignore-checksums
+	cinst twitch --ignore-checksums -y
 	}
 	
 	Write-Output "****"

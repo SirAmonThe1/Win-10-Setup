@@ -9,7 +9,6 @@
 1 PSWindowsUpdate
 1 7zip
 1 PowerShell
-## 1 kis
 1 firefox
 1 javaruntime
 1 adobereader
@@ -22,7 +21,7 @@
 1 shutup10
 1 notepadplusplus
 1 powertoys
-1 keepass
+1 keepassxc
 1 adwcleaner
 1 driverbooster
 1 onedrive
