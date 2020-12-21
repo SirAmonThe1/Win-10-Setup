@@ -135,7 +135,7 @@ if ($debug -ne $true) {
     Write-Output "## Set-MultiMonitorTaskbarMode "2""
     Set-MultiMonitorTaskbarMode "2"
     Write-Output "## Set-DisableWindowsDefender $true"
-    Set-DisableWindowsDefender $true
+    Set-DisableWindowsDefender $false
     Write-Output "## Set-DarkTheme $true"
     Set-DarkTheme $true
     Write-Output "## Set-DisableLockScreen $true"
@@ -194,9 +194,8 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	
 	# Installationen mit Checksum-Fehler
-	cinst teamviewer --ignore-checksums -y
-	
-	
+	cinst choco-upgrade-all-at --params "'/DAILY:yes /TIME:10:00 /ABORTTIME:17:00'"
+	cinst teamviewer --ignore-checksums -y	
 
     $chocopkgs = Get-ChocoPackages "./configs/chocopkg.txt"
     Install-ChocoPackages $chocopkgs 1
