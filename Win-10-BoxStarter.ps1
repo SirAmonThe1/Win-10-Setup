@@ -274,19 +274,31 @@ if ($debug -ne $true) {
 	Write-Output ""
 	Write-Output ""
 	Write-Output ""
+	Write-Output "PSWindowsUpdate installieren"
+	Install-Module -Name PSWindowsUpdate -Force -allowclobber
 	Write-Output "Get-WindowsUpdate"
-	Get-WindowsUpdate
 	Add-WUServiceManager -ServiceID "7971f918-a847-4430-9279-4a52d1efe18d" -AddServiceFlag 7
+	Get-WindowsUpdate
 	
-	Write-Output "****"
-	Write-Output "****"
-	Write-Output "****"
-	Write-Output "****"
-	Write-Output "****"
-	$confirmation = Read-Host "Windows-Updates installieren? [y/n]"
-	if ($confirmation -eq 'y') {
-    	Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot
+	Write-Host -ForegroundColor Red ">>> Checking for Windows Updates"
+	Write-Host -ForegroundColor DarkGray "This will take a while ..."
+	$updates = Get-WUList
+	if ($updates) {
+		Write-Host -ForegroundColor Magenta ">>> Updates found:"
+		Write-Host ($updates | Format-Table | Out-String)
+    $confirmation = Read-Host ">>> Install all? [y/n]"
+    if ($confirmation -eq 'y') {
+        Get-WUInstall -AcceptAll -IgnoreReboot
+		}
+	} else {
+    Write-Host -ForegroundColor Green ">>> No Windows Updates available!"
 	}
+		
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
+	Write-Output "****"
 	
 	
 	Write-Output "## Uninstall-StoreApps"
@@ -321,5 +333,16 @@ if ($debug -ne $true) {
 	Write-Output "****"
 	Write-Output "****"
 	Write-Output "****"
+	
+	# Reboot
+	Write-Host -BackgroundColor Red -ForegroundColor White "##### --- REBOOT STATUS"
+	Write-Host
+	Write-Host -ForegroundColor Red ">>> Checking for reboot status"
+	$Reboot = Get-WURebootStatus
+	if ($Reboot -like "*localhost: Reboot is not required*") {
+		Write-Host -ForegroundColor Green ">>> No reboot required"
+	} 
+
+
 }
 
